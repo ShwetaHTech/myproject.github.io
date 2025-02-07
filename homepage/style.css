@@ -1,0 +1,362 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f0f8ff;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: white;
+  padding: 15px 30px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s;
+  
+}
+
+.nav-links li a:hover {
+  color: #ffcc00;
+}
+
+/* Header Section */
+.header {
+  text-align: center;
+  background: url('https://source.unsplash.com/1600x900/?nature,writing') no-repeat center center/cover;
+  color: white;
+  padding: 80px 20px; 
+  
+}
+
+.header h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.search-bar {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 300px;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  outline: none;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #ffcc00;
+  color: black;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.search-bar button:hover {
+  background-color: #ff9900;
+}
+
+.buttons button {
+  padding: 12px 25px;
+  margin: 15px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4facfe;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: #1e90ff;
+}
+
+/* Explore Stories Section */
+.explore {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(to bottom, #e0f7fa, #fff);
+}
+
+.explore h2 {
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #333;
+}
+
+.stories {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+
+
+
+/* I can start the change from here */
+.story {
+  width: 220px;
+  height: 340px; /* Height badha di gayi */
+  background-color: #ffebcd;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column; /* Images aur text vertically arrange honge */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.story img {
+  width: 100%; /* Image container ke andar set hogi */
+  height: auto; /* Aspect ratio maintain karega */
+  border-radius: 8px;
+  margin-bottom: 8px; /* Thoda gap image aur text ke beech */
+}
+/* I can change here untill */
+
+.story:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 14px;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 15px 0;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+footer ul li a:hover {
+  color: #ffcc00;
+}
+
+/* I can change here ****************************************************************************/
+.browse {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  columns: 3; /* Creates column layout */
+  column-gap: 20px;
+}
+
+li {
+  margin: 5px 0;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+li:hover {
+  color: orange;
+}
+/* untill***************************************************************************************/
+/* middle section starts here */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #333;
+}
+
+.section {
+  margin: 20px 0;
+}
+
+
+.more {
+  text-decoration: none;
+  color: #007BFF;
+  font-size: 14px;
+}
+
+.more:hover {
+  text-decoration: underline;
+}
+
+.feedback {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+
+
+
+.feedback-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 80px; /* Increase padding */
+  text-align: center;
+  width: 360px; /* Increase width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhance shadow for bigger size */
+  font-size: 16px; /* Increase font size for better readability */
+}
+
+.story img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: center; /* Center alignment */
+        align-items: center;
+        background-color: #333;
+        padding: 10px;
+        height: 60px;
+    }
+
+    .navbar ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .navbar ul li {
+        margin: 0 10px;
+    }
+
+    .navbar ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+    }
+
+    /* Smaller story card */
+    .story-card {
+        display: flex;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        overflow: hidden;
+        width: 400px; /* Reduced size */
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .story-image img {
+        width: 120px; /* Adjusted image size */
+        height: 100%; /* Maintain container height */
+        object-fit: cover;
+    }
+
+    .story-details {
+        padding: 10px; /* Reduced padding */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .story-details h2 {
+        font-size: 16px; /* Smaller title */
+        margin: 0;
+        color: #333;
+    }
+
+    .story-details .author {
+        font-size: 12px; /* Smaller font */
+        color: #555;
+        margin: 4px 0; /* Reduced margin */
+    }
+
+    .story-details .description {
+        font-size: 12px;
+        color: #666;
+        margin: 4px 0; /* Reduced margin */
+    }
+
+    .story-stats {
+        display: flex;
+        gap: 8px; /* Reduced gap */
+        font-size: 12px;
+        color: #777;
+    }
+
+    .start-reading {
+        padding: 6px 12px; /* Smaller button */
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        margin-top: 6px; /* Minimum spacing */
+    }
+
+    .start-reading:hover {
+        background-color: #0056b3;
+    }
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .story-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.story-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.story-card:hover {
+    transform: scale(1.05);
+}
+
+.story-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.story-info {
+    padding: 15px;
+}
+
+.rank {
+    background: orange;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.stats {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.tags {
+    margin-top: 10px;
+}
+
+.tag {
+    background: #ddd;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.completed {
+    background: green;
+    color: white;
+}
+
+    </style>
+</head>
+<body>
+    <div class="story-container">
+        <div class="story-card">
+            <img src="images/The Silent Witness.jpg" alt="Story Image">
+            <div class="story-info">
+                <span class="rank">#3</span>
+                <h3>Mr Rude and Me</h3>
+                <p>by vintage-wifi</p>
+                <div class="stats">
+                    <span>15.2M 👁️</span> 
+                    <span>331K ❤️</span> 
+                    <span>84 💬</span>
+                </div>
+                <p class="description">What happens when Ms Innocent, Chelsea-Anne Richards...</p>
+                <div class="tags">
+                    <span class="tag completed">Completed</span>
+                    <span class="tag">romance</span>
+                    <span class="tag">rude</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
