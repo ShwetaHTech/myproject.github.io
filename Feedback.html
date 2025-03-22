@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: black;
+    }
+    
+    /* Container */
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      width: 80%;
+      max-width: 600px;
+      padding: 30px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 30px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: black;
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+      text-align: left;
+    }
+    
+    label {
+      font-size: 18px;
+      margin-bottom: 8px;
+      display: block;
+      font-weight: bold;
+      color: black;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 16px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      background-color: white;
+      color: black;
+      transition: border-color 0.3s;
+      box-sizing: border-box;
+    }
+    
+    textarea {
+      height: 140px;
+      resize: vertical;
+    }
+    
+    .rating {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    
+    .rating input {
+      display: none;
+    }
+    
+    .rating label {
+      font-size: 28px;
+      cursor: pointer;
+      color: #948686;
+      transition: color 0.3s;
+    }
+    
+    .rating input:checked ~ label,
+    .rating input:checked + label {
+      color: black;
+    }
+    
+    .rating input:hover ~ label {
+      color: black;
+    }
+    
+    .button-group {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    
+    button {
+      background: linear-gradient(135deg, #00bcd4, #ff66b2);
+      color: white;
+      border: none;
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    
+    button:hover {
+      background: linear-gradient(135deg, #0097a7, #ff4f75);
+      transform: scale(1.05);
+    }
+    
+    .thank-you-message {
+      display: none;
+      font-size: 24px;
+      color: #4CAF50;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container" id="feedbackContainer">
+    <h1>Feedback Form</h1>
+    <form id="feedbackForm">
+      <div class="form-group">
+        <label for="storyTitle">Story Title</label>
+        <input type="text" id="storyTitle" placeholder="Enter the story title" required>
+      </div>
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="feedback">Your Feedback</label>
+        <textarea id="feedback" placeholder="Share your thoughts..." required></textarea>
+      </div>
+      <div class="form-group">
+        <label>Rate the Story</label>
+        <div class="rating">
+          <input type="radio" id="star5" name="rating" value="5">
+          <label for="star5">★</label>
+          <input type="radio" id="star4" name="rating" value="4">
+          <label for="star4">★</label>
+          <input type="radio" id="star3" name="rating" value="3">
+          <label for="star3">★</label>
+          <input type="radio" id="star2" name="rating" value="2">
+          <label for="star2">★</label>
+          <input type="radio" id="star1" name="rating" value="1">
+          <label for="star1">★</label>
+        </div>
+      </div>
+      <div class="button-group">
+        <button type="submit">Submit Feedback</button>
+      </div>
+    </form>
+  </div>
+  <div id="thankYouMessage" class="thank-you-message">Thank you for your feedback!</div>
+  
+  <script>
+    document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+      document.getElementById('feedbackContainer').style.display = 'none'; // Hide form container
+      document.getElementById('thankYouMessage').style.display = 'block';
+    });
+  </script>
+</body>
+</html>

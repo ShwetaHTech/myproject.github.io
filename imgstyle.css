@@ -1,0 +1,40 @@
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+.container{
+   width: 80%;
+   height: 80vh;
+   /* background: rgb(242, 141, 74);  */
+   background: white;
+   display: flex;
+   align-self: center;
+   align-items: center;
+   justify-content: center;
+   
+}
+.swiper{
+    width: 100%;
+    height: fit-content;
+}
+.swiper-slide{
+  width: 100%;
+ /* width: max-content; */
+}
+.swiper-slide img {
+    width: 100%;  /* Image will take full width of the slide */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra spacing below images */
+}
+.custom-pagination {
+    text-align: center;
+    margin-top: 15px; /* Adjust as needed */
+}
+
+/* .swiper .swiper-button-prev, .swiper .swiper-button-next{
+    color: #fff;
+}
+.swiper .swiper-pagination-bullet-active{
+    background: white;
+} */

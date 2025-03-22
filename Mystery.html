@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mystery Stories</title>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="styles.css">
+
+  <div id="navbar-container"></div>
+  <script>
+    fetch("navbar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("navbar-container").innerHTML = data;
+        let script = document.createElement("script");
+        script.src = "navbar.js";
+        document.body.appendChild(script);
+      })
+      .catch(error => console.error("Error loading navbar:", error));
+  </script>
+</head>
+
+<body>
+  <h1 style="font-size: 50px;"><b>Mystery Stories</b></h1><br>
+  <div class="intro-text">
+    <h1>🕵️ "Unlock the Secrets Within"🖤 "Where Every Page is a Puzzle"</h1>
+  </div><br>
+
+  <h2><pre>                                     Sort by Hot</pre></h2><br><br>
+  <div class="stories">
+      <div class="story">
+          <img src="MysteryImages/Blissful Misery.jpg" alt="Whispers in the Wind" data-id="185" onclick="viewStory(this)">
+          <p>Thriller</p>
+      </div>
+      <div class="story">
+          <img src="MysteryImages/Dawn of the Duchess.jpg" alt="The Forgotten Realm" data-id="186" onclick="viewStory(this)">
+          <p>Royal</p>
+      </div>
+      <div class="story">
+          <img src="MysteryImages/Death Is My BFF.jpg" alt="A Love Beyond Time" data-id="186" onclick="viewStory(this)">
+          <p>Dark</p>
+      </div>
+      <div class="story">
+          <img src="MysteryImages/Flamed Hearts  His Obsession.jpg" alt="Echoes of the Past" data-id="187" onclick="viewStory(this)">
+          <p>Obsession</p>
+      </div>
+      <div class="story">
+          <img src="MysteryImages/Freed.jpg" alt="Shadows and Secrets" data-id="188" onclick="viewStory(this)">
+          <p>Freedom</p>
+      </div>
+      <div class="story">
+          <img src="MysteryImages/Hunted By The Silence.jpg" alt="The Last Sunrise" data-id="189" onclick="viewStory(this)">
+          <p>Horror</p>
+      </div>
+      <div class="story">
+          <img src="MysteryImages/Inspector Rames.jpg" alt="Journey to Eternity" data-id="190" onclick="viewStory(this)">
+          <p>Detective</p>
+      </div>
+      <div class="story">
+          <img src="MysteryImages/LAW.jpg" alt="The Silent Witness" data-id="191" onclick="viewStory(this)">
+          <p>Crime</p>
+      </div>
+  </div><br><br>
+
+  <h2><pre>                                     Most Liked</pre></h2><br><br>
+  <div class="stories">
+      <div class="story">
+          <img src="MysteryImages/Masterful Trickery.jpg" alt="Whispers in the Wind" data-id="192" onclick="viewStory(this)">
+          <p>Deception</p>
+      </div>
+      <div class="story">
+          <img src="MysteryImages/Playing With Fire.jpg" alt="The Forgotten Realm" data-id="193" onclick="viewStory(this)">
+          <p>Danger</p>
+      </div>
+      <div class="story">
+          <img src="Rimages/Yours for infinity.jpg" alt="A Love Beyond Time" data-id="194" onclick="viewStory(this)">
+          <p>Forever</p>
+      </div>
+      <div class="story">
+          <img src="MysteryImages/PSYCHO KIDNAPPER.jpg" alt="Echoes of the Past" data-id="195" onclick="viewStory(this)">
+          <p>Psychotic</p>
+      </div>
+      <div class="story">
+          <img src="MysteryImages/Please Her ✓.jpg" alt="Shadows and Secrets" data-id="196" onclick="viewStory(this)">
+          <p>Desire</p>
+      </div>
+      <div class="story">
+          <img src="MysteryImages/Reduced to Ruin.jpg" alt="The Last Sunrise" data-id="197" onclick="viewStory(this)">
+          <p>Destruction</p>
+      </div>
+      <div class="story">
+          <img src="MysteryImages/Reverie.jpg" alt="Journey to Eternity" data-id="198" onclick="viewStory(this)">
+          <p>Dreams</p>
+      </div>
+      <div class="story">
+          <img src="MysteryImages/Serial.jpg" alt="The Silent Witness" data-id="199" onclick="viewStory(this)">
+          <p>Mystery</p>
+      </div>
+  </div><br><br>
+
+  <h2><pre>                                     People Want</pre></h2><br><br>
+  <div class="stories">
+      <div class="story">
+          <img src="MysteryImages/Stepdad's Obsession.jpg" alt="Whispers in the Wind" data-id="200" onclick="viewStory(this)">
+          <p>Obsession</p>
+      </div>
+      <div class="story">
+          <img src="MysteryImages/Stolen By Him.jpg" alt="The Forgotten Realm" data-id="201" onclick="viewStory(this)">
+          <p>Kidnapped</p>
+      </div>
+      <div class="story">
+          <img src="MysteryImages/Submission.jpg" alt="A Love Beyond Time" data-id="202" onclick="viewStory(this)">
+          <p>Control</p>
+      </div>
+      <div class="story">
+          <img src="MysteryImages/Sugar - Charlie Dalton.jpg" alt="Echoes of the Past" data-id="203" onclick="viewStory(this)">
+          <p>Seduction</p>
+      </div>
+      <div class="story">
+          <img src="MysteryImages/Tangled Hearts and Truths.jpg" alt="Shadows and Secrets" data-id="204" onclick="viewStory(this)">
+          <p>Secrets</p>
+      </div>
+      <div class="story">
+          <img src="MysteryImages/The Cellar.jpg" alt="The Last Sunrise" data-id="205" onclick="viewStory(this)">
+          <p>Trapped</p>
+      </div>
+      <div class="story">
+          <img src="MysteryImages/The Worst is Yet to Come.jpg" alt="Journey to Eternity" data-id="206" onclick="viewStory(this)">
+          <p>Horror</p>
+      </div>
+      <div class="story">
+          <img src="MysteryImages/VEILED✅.jpg" alt="The Silent Witness" data-id="207" onclick="viewStory(this)">
+          <p>Hidden</p>
+      </div>
+  </div><br><br>
+</body>
+
+<div id="footer"></div>
+<script src="footer.js"></script>
+
+</html>

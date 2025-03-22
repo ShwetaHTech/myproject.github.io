@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup Form</title>
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: black;
+    }
+    
+    /* Main Content Wrapper */
+    .main-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding-top: 80px; /* To avoid overlap with fixed navbar */
+    }
+
+    .signup-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      border: 1px solid #ccc;
+    }
+    h2 {
+      font-size: 26px;
+      color: black;
+      margin-bottom: 20px;
+    }
+    label {
+      font-size: 16px;
+      color: black;
+      display: block;
+      text-align: left;
+      margin-bottom: 5px;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      outline: none;
+      transition: 0.3s;
+      background: #fff;
+      color: black;
+      margin-bottom: 15px;
+    }
+    input:hover,
+    input:focus {
+      border: 1px solid #ff77a9;
+    }
+    .error-message {
+      color: #ff4d4d;
+      font-size: 14px;
+      margin-bottom: 10px;
+      display: none;
+      text-align: left;
+    }
+    button {
+      background: linear-gradient(to right, #6BCBFF, #FF77A9);
+      color: white;
+      border: none;
+      padding: 14px;
+      width: 100%;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: 0.3s ease-in-out;
+      font-weight: bold;
+    }
+    button:hover {
+      background: linear-gradient(to right, #5AB6E6, #FF6095);
+      transform: scale(1.05);
+    }
+    
+    @media (max-width: 768px) {
+      .signup-container {
+        width: 90%;
+        padding: 20px;
+      }
+      h2 {
+        font-size: 24px;
+      }
+      input {
+        font-size: 14px;
+      }
+      button {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main-content">
+    <div class="signup-container">
+      <h2>Create an Account</h2>
+      <form id="signupForm">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username">
+        <div id="username-error" class="error-message">Username is required</div>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email">
+        <div id="email-error" class="error-message">Valid email is required</div>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+        <div id="password-error" class="error-message">Password is required</div>
+
+        <button type="submit">Sign Up</button>
+      </form>
+      <div class="footer">
+        <p>Already have an account? <a href="loginForm.html">Login here</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let usernameInput = document.getElementById("username");
+      let emailInput = document.getElementById("email");
+      let passwordInput = document.getElementById("password");
+      let usernameError = document.getElementById("username-error");
+      let emailError = document.getElementById("email-error");
+      let passwordError = document.getElementById("password-error");
+
+      let passwordPattern = /^(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+      let signupForm = document.getElementById('signupForm');
+
+      // Password field pe focus hone par validation rules dikhao
+      passwordInput.addEventListener("focus", function () {
+        passwordError.innerText = "Password must be at least 8 characters long and include at least 1 number and 1 special character.";
+        passwordError.style.display = "block";
+        passwordError.style.color = "#ff9900"; // Orange color for guidance
+      });
+
+      // Password real-time validation
+      passwordInput.addEventListener("input", function () {
+        let password = passwordInput.value;
+
+        if (passwordPattern.test(password)) {
+          passwordError.innerText = "✅ Password is strong!";
+          passwordError.style.color = "green";
+        } else {
+          passwordError.innerText = "❌ Must be 8+ chars, 1 number, 1 special char.";
+          passwordError.style.color = "red";
+        }
+      });
+
+      // Form submit validation
+      signupForm.addEventListener('submit', function (event) {
+        let username = usernameInput.value.trim();
+        let email = emailInput.value.trim();
+        let password = passwordInput.value.trim();
+        let isValid = true;
+
+        // Clear previous error messages
+        usernameError.style.display = 'none';
+        emailError.style.display = 'none';
+        passwordError.style.display = 'none';
+
+        // Username validation
+        if (username === '') {
+          usernameError.innerText = "Username is required.";
+          usernameError.style.display = 'block';
+          isValid = false;
+        }
+
+        // Email validation
+        if (email === '' || !/^\S+@\S+\.\S+$/.test(email)) {
+          emailError.innerText = "Valid email is required.";
+          emailError.style.display = 'block';
+          isValid = false;
+        }
+
+        // Password validation
+        if (!passwordPattern.test(password)) {
+          passwordError.innerText = "❌ Password must meet all conditions.";
+          passwordError.style.display = 'block';
+          passwordError.style.color = "red";
+          isValid = false;
+        }
+
+        if (!isValid) {
+          event.preventDefault();
+        } else {
+          event.preventDefault();
+          alert(`🎉 Signup Successful!\nUsername: ${username}\nEmail: ${email}`);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

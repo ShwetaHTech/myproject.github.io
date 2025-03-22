@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="story.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<style>
+  .story-meta {
+    display: flex;
+    justify-content: center;  /* Center me lane ke liye */
+    align-items: center;  /* Vertical align */
+    gap: 15px;  /* Icons aur Text ke beech space */
+    text-align: center;
+}
+.start-reading {
+    margin-top: 40px; /* Reads/Votes aur Button ke beech space badhane ke liye */
+}
+.logo {
+    display: flex;         /* Enables flexbox */
+    align-items: center;   /* Aligns items vertically */
+    gap: 10px;            /* Adds space between the logo and text */
+}
+.rounded-logo {
+    border-radius: 50%;   /* Makes the image circular */
+}
+
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo" width="50" class="rounded-logo"> 
+            <span class="site-name">storyWorld</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="startWriting.html">Start Writing</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="loginForm.html">Login</a></li>
+            <li><a href="signupForm.html">Sign Up</a></li>
+            <li><a href="aboutUs.html">About Us</a></li>
+            <li><a href="contactUs.html">Contact Us</a></li>
+            <li><a href="Feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+    
+    <br><br><br><br>
+    
+    <div class="story-container">
+      <div class="story-image">
+          <img id="story-image" src=" " alt=" ">
+      </div>
+      <div class="story-details">
+          <h1 id="story-title"></h1>
+          <div class="story-meta">
+             <i class="fa fa-eye"></i>Reads: <span id="story-reads">0</span>
+            <!-- <button id="increase-reads">+ Read</button> -->
+            <!-- ⭐ Votes: <span id="story-votes">0</span>
+            <button id="increase-votes">+ Vote</button> -->
+            <i id="increase-votes" class="fa fa-thumbs-up" style="cursor: pointer;"></i> <!-- Votes: --> <span id="story-votes">0</span>
+        </div>
+        
+          <button class="start-reading" id="start-reading">📖 Start Reading</button>
+      </div>
+  </div>
+  
+  <br><br>
+  
+  <!-- ✅ Summary Container Ko Sahi Place Pe Rakha Gaya -->
+  <div class="summary-container">
+      <div class="summary">
+          <p id="story-summary"></p>
+      </div>
+  </div>
+  
+
+    <script>
+        document.getElementById("start-reading").addEventListener("click", function() {
+            const storyId = new URLSearchParams(window.location.search).get('id');
+            window.location.href = `story-reader.html?id=${storyId}`;
+        });
+    </script>
+
+    <div id="footer"></div>
+    <script src="footer.js"></script>
+</body>
+</html>

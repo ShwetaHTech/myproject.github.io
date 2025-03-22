@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Story</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+    .story-content {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    /* Story content ke liye white container */
+    .story-container {
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 1000px;
+        background-color: white;
+    }
+</style>
+<!-- <div id="navbar-container"></div>
+    <script>
+        fetch("navbar.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("navbar-container").innerHTML = data;
+            let script = document.createElement("script");
+            script.src = "navbar.js";
+            document.body.appendChild(script);
+        })
+        .catch(error => console.error("Error loading navbar:", error));
+    </script> -->
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1e2a47; /* Dark Blue */
+  color: white;
+  padding: 30px 40px;
+  border-bottom: 2px solid #ddd;
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+.logo {
+    display: flex;         /* Enables flexbox */
+    align-items: center;   /* Aligns items vertically */
+    gap: 10px;            /* Adds space between the logo and text */
+}
+
+.rounded-logo {
+    border-radius: 50%;   /* Makes the image circular */
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 12px;
+  display: block;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff6600;
+}
+
+/* Multi-Column Dropdown */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  padding: 15px;
+  width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
+}
+
+.dropdown h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.dropdown ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  list-style: none;
+}
+
+.dropdown ul li a {
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown ul li a:hover {
+  text-decoration: underline;
+  color: #ff6600;
+}
+
+/* Show dropdown when active */
+.show {
+  display: block !important;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .navbar {
+      flex-direction: column;
+      align-items: center;
+  }
+  .nav-links {
+      flex-direction: column;
+      text-align: center;
+  }
+  .dropdown {
+      width: 100%;
+  }
+  .dropdown ul {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+  /* Search Box */
+  /* .search-box button {
+    padding: 14px 20px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    background-color: #4caf50; 
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-box button:hover {
+    background-color: #45a049;
+}
+
+
+
+  .search-box {
+    text-align: center;
+    margin: 50px 0;
+    margin-bottom: 100px;
+  }
+
+  .search-box input {
+    width: 60%;
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border 0.3s;
+  }
+
+  .search-box input:focus {
+    border: 1px solid #4caf50;
+  } */
+/* the navbar styles end here **************************************************************************/
+
+    </style>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo" width="50"  class="rounded-logo"> 
+            <span class="site-name">storyWorld</span>
+        </div>
+    
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+            <li>
+                <a id="browseBtn" href="#">Browse ▼</a>
+                <div class="dropdown" id="dropdownMenu">
+                    <h3>BROWSE</h3>
+                    <ul>
+                        <li><a href="Romance.html">Romance</a></li>
+                        <li><a href="Fantasy.html">Fantasy</a></li>
+                        <li><a href="HistoricalFiction.html">Historical Fiction</a></li>
+                        <li><a href="scienceFiction.html">Science Fiction</a></li>
+                        <li><a href="Horror.html">Horror</a></li>
+                        <li><a href="Mystery.html">Mystery</a></li>
+                        <li><a href="Adventure.html">Adventure</a></li>
+                    </ul>
+                </div>
+            </li>
+            <!-- <li><a href="startReading.html">startWriting</a></li> -->
+            <li><a href="startWriting.html">Start Writing</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <!-- <li><a href="submitStory.html">startWriting</a></li> -->
+            <li><a href="loginForm.html">Login</a></li>
+            <li><a href="signupForm.html">Sign Up</a></li>
+            <li><a href="aboutUs.html">About Us</a></li>
+      <li><a href="contactUs.html">Contact Us</a></li>
+      <li><a href="Feedback.html">Feedback</a></li>
+            
+        </ul>
+    </nav>
+    <br><br><br><br>
+    <!-- Search Box -->
+    <!-- <div class="search-box">
+        <input type="text" placeholder="🔍Search stories...">
+        <button>Search</button>
+    </div> -->
+    <br><br><br><br>
+    <h1 id="story-title"></h1>
+
+    <!-- Story content container -->
+    <div class="story-container">
+        <p id="story-content" class="story-content"></p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const storyId = new URLSearchParams(window.location.search).get('id');
+
+            console.log("Story ID:", storyId);
+
+            fetch("stories.json")  
+                .then(response => response.json())
+                .then(data => {
+                    let stories = data.stories || data;
+                    let story = stories.find(st => st.id === Number(storyId));
+
+                    if (story) {
+                        document.getElementById("story-title").innerText = story.title;
+                        document.getElementById("story-content").innerText = story.content;
+                    } else {
+                        document.querySelector(".story-container").innerHTML = "<h1>Story Not Found</h1>";
+                    }
+                })
+                .catch(error => console.error("Error fetching JSON:", error));
+        });
+    </script>
+
+    <div id="footer"></div>
+    <script src="footer.js"></script>
+</body>
+</html>
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Story</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+    .story-content{
+        text-align: center;
+        background-color: rgb(44, 232, 232);
+        font-size: 30px;
+    }
+</style>
+<div id="navbar-container"></div>
+    <script>
+        fetch("navbar.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("navbar-container").innerHTML = data;
+
+            // JavaScript ko execute karne ke liye script bhi load karna padega
+            let script = document.createElement("script");
+            script.src = "navbar.js"; // Separate JS file for event listeners
+            document.body.appendChild(script);
+        })
+        .catch(error => console.error("Error loading navbar:", error));
+    </script>
+</head>
+<body>
+
+    
+    <div class="summary">
+        <h1  id="story-title"></h1>
+        <p id="story-content"></p>
+    </div>
+   
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const storyId = new URLSearchParams(window.location.search).get('id');
+
+            console.log("Story ID:", storyId); // Debugging ke liye check karo
+
+            fetch("stories.json")  // JSON file ka correct path ensure karo
+                .then(response => response.json())
+                .then(data => {
+                    let stories = data.stories || data;  // Agar JSON me "stories" key hai, to use karo
+                    let story = stories.find(st => st.id === Number(storyId)); // Number me convert kar ke compare karo
+
+                    if (story) {
+                        document.getElementById("story-title").innerText = story.title;
+                        document.getElementById("story-content").innerText = story.content;
+                    } else {
+                        document.body.innerHTML = "<h1>Story Not Found</h1>";
+                    }
+                })
+                .catch(error => console.error("Error fetching JSON:", error));
+        });
+    </script>
+    <div id="footer"></div>
+<script src="footer.js"></script>
+</body>
+</html> -->

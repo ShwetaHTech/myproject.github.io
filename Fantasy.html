@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Stories</title>
+    <script src="script.js" defer></script> <!-- Yeh script.json ko load karega -->
+    <link href="styles.css" rel="stylesheet">
+    <link href="imgstyle.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+    <div id="navbar-container"></div>
+    <script>
+        fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar-container").innerHTML = data;
+                let script = document.createElement("script");
+                script.src = "navbar.js"; // Separate JS file for event listeners
+                document.body.appendChild(script);
+            })
+            .catch(error => console.error("Error loading navbar:", error));
+    </script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+  <h1 style="font-size: 50px;">Fantasy Stories</h1><br>
+  <div class="intro-text">
+    <h1>🦄 "Step into a World of Magic" ✨ "Where Dreams and Legends Collide"</h1>
+  </div><br>
+
+  <h2><pre>                                     sort by hot</pre></h2><br><br>
+  <div class="stories">
+      <div class="story 1">
+          <img src="Fantacyimages/7FATES CHAKHO.jpg" alt="Whispers in the Wind" data-id="113" onclick="viewStory(this)">
+          <p>Adventure</p>
+      </div>
+      <div class="story 2">
+          <img src="Fantacyimages/Another Life, Another Me.jpg" alt="The Forgotten Realm" data-id="114" onclick="viewStory(this)">
+          <p>Love</p>
+      </div>
+      <div class="story 3">
+          <img src="Fantacyimages/Become the Strongest Master With a Genius Student.jpg" alt="A Love Beyond Time" data-id="115" onclick="viewStory(this)">
+          <p>Power</p>
+      </div>
+      <div class="story 4">
+          <img src="Fantacyimages/Bound by Fate.jpg" alt="Echoes of the Past" data-id="116" onclick="viewStory(this)">
+          <p>Destiny</p>
+      </div>
+      <div class="story 5">
+          <img src="Fantacyimages/Cannon Fodder Cultivation Guide.jpg" alt="Shadows and Secrets" data-id="117" onclick="viewStory(this)">
+          <p>Survival</p>
+      </div>
+      <div class="story 6">
+          <img src="Fantacyimages/Challenges In Anuzyn.jpg" alt="The Last Sunrise" data-id="118" onclick="viewStory(this)">
+          <p>Challenge</p>
+      </div>
+      <div class="story 7">
+          <img src="Fantacyimages/choronicles of ethera.jpg" alt="Journey to Eternity" data-id="119" onclick="viewStory(this)">
+          <p>Legend</p>
+      </div>
+      <div class="story 8">
+          <img src="Fantacyimages/Genius Ninth Princess.jpg" alt="The Silent Witness" data-id="120" onclick="viewStory(this)">
+          <p>Royalty</p>
+      </div>
+  </div><br><br>
+  <h2><pre>                                     Most Liked</pre></h2><br><br>
+  <div class="stories">
+      <div class="story 1">
+          <img src="Fantacyimages/I Became the Villain's Wife.jpg" alt="Whispers in the Wind" data-id="121" onclick="viewStory(this)">
+          <p>Twist</p>
+      </div>
+      <div class="story 2">
+          <img src="Fantacyimages/I don't want to be the heroine!.jpg" alt="The Forgotten Realm" data-id="122" onclick="viewStory(this)">
+          <p>Drama</p>
+      </div>
+      <div class="story 3">
+          <img src="Fantacyimages/Nocturne's Night.jpg" alt="A Love Beyond Time" data-id="123" onclick="viewStory(this)">
+          <p>Dark</p>
+      </div>
+      <div class="story 4">
+          <img src="Fantacyimages/Overlord of the Martial Realm.jpg" alt="Echoes of the Past" data-id="124" onclick="viewStory(this)">
+          <p>Warrior</p>
+      </div>
+      <div class="story 5">
+          <img src="Fantacyimages/Pick The Second Male Lead.jpg" alt="Shadows and Secrets" data-id="125" onclick="viewStory(this)">
+          <p>Romance</p>
+      </div>
+      <div class="story 6">
+          <img src="Fantacyimages/Reincarned with a deities Harem.jpg" alt="The Last Sunrise" data-id="126" onclick="viewStory(this)">
+          <p>Rebirth</p>
+      </div>
+      <div class="story 7">
+          <img src="Fantacyimages/Renaissance [Reincarnation story].jpg" alt="Journey to Eternity" data-id="127" onclick="viewStory(this)">
+          <p>History</p>
+      </div>
+      <div class="story 8">
+          <img src="Fantacyimages/Spiritless Life.jpg" alt="The Silent Witness" data-id="128" onclick="viewStory(this)">
+          <p>Mystery</p>
+      </div>
+  </div><br><br>
+  <h2><pre>                                     people wants</pre></h2><br><br>
+  <div class="stories">
+      <div class="story 1">
+          <img src="Fantacyimages/The ballainess who has.jpg" alt="Whispers in the Wind" data-id="129" onclick="viewStory(this)">
+          <p>Revenge</p>
+      </div>
+      <div class="story 2">
+          <img src="Fantacyimages/The Demon King's Beloved Daughter.jpg" alt="The Forgotten Realm" data-id="130" onclick="viewStory(this)">
+          <p>Myth</p>
+      </div>
+      <div class="story 3">
+          <img src="Fantacyimages/The Light and The Shadow.jpg" alt="A Love Beyond Time" data-id="131" onclick="viewStory(this)">
+          <p>Balance</p>
+      </div>
+      <div class="story 4">
+          <img src="Fantacyimages/The Shadow Wolf.jpg" alt="Echoes of the Past" data-id="132" onclick="viewStory(this)">
+          <p>Beast</p>
+      </div>
+      <div class="story 5">
+          <img src="Fantacyimages/Totem Reincarnation.jpg" alt="Shadows and Secrets" data-id="133" onclick="viewStory(this)">
+          <p>Totem</p>
+      </div>
+      <div class="story 6">
+          <img src="Fantacyimages/Twisted fate.jpg" alt="The Last Sunrise" data-id="134" onclick="viewStory(this)">
+          <p>Fate</p>
+      </div>
+      <div class="story 7">
+          <img src="Fantacyimages/Witches Don't Burn, Silly.jpg" alt="Journey to Eternity" data-id="135" onclick="viewStory(this)">
+          <p>Magic</p>
+      </div>
+      <div class="story 8">
+          <img src="Fantacyimages/The Abandoned Princess.jpg" alt="The Silent Witness" data-id="136" onclick="viewStory(this)">
+          <p>Tragedy</p>
+      </div>
+  </div><br><br>
+</body>
+<div id="footer"></div>
+<script src="footer.js"></script>
+</html>

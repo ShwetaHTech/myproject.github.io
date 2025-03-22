@@ -1,178 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Story Sharing Homepage</title>
-  <link rel="stylesheet" href="finalstyle.css">
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>storyWorld</title>
+    <script src="script.js" defer></script> <!-- Yeh script.json ko load karega -->
+    <link href="styles.css" rel="stylesheet">
+    <link href="imgstyle.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+    <div id="navbar-container"></div>
+    <script>
+        fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar-container").innerHTML = data;
 
- <!-- <style>
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-}
+                // For executing the javascript script load kravi lagte
+                let script = document.createElement("script");
+                script.src = "navbar.js"; // Separate JS file for event listeners
+                document.body.appendChild(script);
+            })
+            .catch(error => console.error("Error loading navbar:", error));
+    </script>
+    <style>
 
-.modal-content {
-    background: white;
-    padding: 20px;
-    width: 50%;
-    margin: 15% auto;
-    text-align: center;
-    border-radius: 10px;
-    position: relative;
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 20px;
-    cursor: pointer;
-}
-</style> -->
+    </style>
 </head>
+
 <body>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">Logo</div>
-    <ul class="nav-links">
-      <li><a href="#Browse">Browse</a></li>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#About">About</a></li>
-      <li><a href="#explore">Explore</a></li>
-      <li><a href="#profile">Profile</a></li>
-      <li><a href="#login">Login</a></li>
-      <li><a href="#signup">Sign Up</a></li>
-    </ul>
-  </nav>
-  <!-- I can change here for brows mega menu  -->
-   
-   <!-- end of the brows mega menu  -->
-
-  <!-- Header Section -->
-  <header class="header">
-    <h1>Share Your Stories with the World!</h1>
-    <div class="search-bar">
-      <input type="text" placeholder="Search" />
-      <button>🔍</button>
-    </div>
-    <div class="buttons">
-      <button>Start Reading</button>
-      <button>Start Writing</button>
-    </div>
-  </header>
-<!-- 
-  Explore Stories Section -->
-  <div class="container">
-    <h1>Explore Stories</h1>
-    
-   
-
-    <section class="section">
-      <h2>Most Popular Stories</h2>
-      <div class="stories">
-        <div class="story 1">
-        
-          <img src="images/Whispers in the Wind.jpg" alt="Whispers in the Wind" class="story-img" data-story="Yeh ek hero ki kahani hai jo sapne sach karna chahta hai."/>
-          </div> 
-          <div class="story 2">
-            <img src="images/The Forgotten Realm.jpg" alt="The Forgotten Realm" class="story-img" data-story="eth story aheeeeeeeeeeeeeeeeeeeeeeeeeeeeeee" />
-            </div> 
-            <div class="story 3">
-              <img src="images/A Love Beyond Time.jpg" alt="A Love Beyond Time" class="story-img" data-story="Yeh ek hero ki kahani hai jo sapne sach karna chahta hai." />
-              </div> 
-              <div class="story 4">
-                <img src="images/Echoes of the Past.jpg" alt="Echoes of the Past" class="story-img" data-story="Yeh ek hero ki kahani hai jo sapne sach karna chahta hai."/>
-                </div> 
-                <div class="story 5">
-                  <img src="images/Shadows and Secrets.jpg" alt="Shadows and Secrets" class="story-img" data-story="Yeh ek hero ki kahani hai jo sapne sach karna chahta hai." />
-                  </div> 
-                  <div class="story 6">
-                    <img src="images/The Last Sunrise.jpg" alt="The Last Sunrise" class="story-img" data-story="Yeh ek hero ki kahani hai jo sapne sach karna chahta hai." />
-                    </div> 
-                    <div class="story 7">
-                      <img src="images/Journey to Eternity.jpg" alt="Journey to Eternity" class="story-img" data-story="Yeh ek hero ki kahani hai jo sapne sach karna chahta hai."/>
-                      </div>   
-                      <div class="story 8">
-                        <img src="images/The Silent Witness.jpg" alt="The Silent Witness" class="story-img" data-story="Yeh ek hero ki kahani hai jo sapne sach karna chahta hai."/>
-                        </div> 
-                        <div class="story 9">
-                          <img src="images/Beneath the Starlit Sky.jpg" alt="Beneath the Starlit Sky" class="story-img" data-story="Yeh ek hero ki kahani hai jo sapne sach karna chahta hai."/>
-                          </div> 
-                          <div class="story 10">
-                            <img src="images/The Edge of Tomorrow.jpg" alt="The Edge of Tomorrow" class="story-img" data-story="Yeh ek hero ki kahani hai jo sapne sach karna chahta hai."/>
-                            </div> 
-  
-        <a href="viewAllPopularStories.html">View All Popular Stories</a>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>New Stories</h2>
-      <div class="stories">
-
-        <div class="story 1">
-          <img src="images/The Moonlit Garden.jpg" alt="The Moonlit Garden" />
-          </div>
-          <div class="story 2">
-            <img src="images/Through the Ashes.jpg" alt="Through the Ashes" />
+    <div class="intro-text">
+        <h1>Discover Your Next Favorite Story</h1><br>
+        <p>Explore a world of captivating tales across multiple genres. Browse through our featured stories and dive
+            into an adventure, romance, thriller, and more.</p>
+    </div><br>
+    <h1>Most Popular Stories</h1><br><br>
+    <div class="stories">
+        <button class="arrow left hidden" id="prev">&#10094;</button>
+        <div class="story ">
+            <img data-id="1" src="images/Whispers in the Wind.jpg" alt="Whispers in the Wind" onclick="viewStory(this)">
+            <p>Drama</p>
+        </div>
+        <div class="story">
+            <img data-id="2" src="images/The Forgotten Realm.jpg" alt="The Forgotten Realm" onclick="viewStory(this)">
+            <p>Fantacy</p>
+        </div>
+        <div class="story">
+            <img data-id="3" src="images/A Love Beyond Time.jpg" alt="A Love Beyond Time" onclick="viewStory(this)">
+            <p>Romance</p>
+        </div>
+        <div class="story">
+            <img data-id="4" src="images/Echoes of the Past.jpg" alt="Echoes of the Past" onclick="viewStory(this)">
+            <p>Mystery</p>
+        </div>
+        <div class="story">
+            <img data-id="5" src="images/Shadows and Secrets.jpg" alt="Shadows and Secrets" onclick="viewStory(this)">
+            <p>Suspense</p>
+        </div>
+        <div class="story">
+            <img data-id="6" src="images/The Last Sunrise.jpg" alt="The Last Sunrise" onclick="viewStory(this)">
+            <p>Dystopian</p>
+        </div>
+        <div class="story">
+            <img data-id="7" src="images/Journey to Eternity.jpg" alt="Journey to Eternity" onclick="viewStory(this)">
+            <p>Fantasy</p>
+        </div>
+        <div class="story">
+            <img data-id="8" src="images/The Silent Witness.jpg" alt="The Silent Witness" onclick="viewStory(this)">
+            <p>Crime</p>
+        </div>
+        <!-- <div class="story 5">
+            <img src="AdventureImages/The Agents.jpg" alt="Shadows and Secrets" data-id="109" onclick="viewStory(this)">
+            <p>Adventure</p>
+        </div>
+        <div class="story 8">
+            <img src="HorrorImages/When All is Lost.jpg" alt="The Silent Witness" data-id="160" onclick="viewStory(this)">
+            <p>Horror</p>
+        </div> -->
+        <!-- <button id="next" class="arrow right">&#10095;</button> -->
+    </div><br><br><br>
+    <h1>Read The Amazing Stories From Story World</h1><br>
+    <div class="container">
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"><img src="images/img1.png" alt="Share-your-story1"></div>
+                <!-- <div class="swiper-slide"><img src="img2.png" alt="onlinestorysharingplatformimg2"></div> -->
+                <div class="swiper-slide"><img src="images/img3.png" alt="Share-More-Stories3"></div>
+                <div class="swiper-slide"><img src="images/img4.png" alt="storyofmylife4"></div>
+                <div class="swiper-slide"><img src="images/img5.png" alt="storyofmylife4"></div>
+                <div class="swiper-slide"><img src="images/img6.png" alt="storyofmylife4"></div>
+                <div class="swiper-slide"><img src="images/img7.png" alt="storyofmylife4"></div>
             </div>
-            <div class="story 3">
-              <img src="images/Secrets Beneath the Waves.jpg" alt="Secrets Beneath the Waves" />
-              </div>
-              <div class="story 4">
-                <img src="images/Beyond the Horizon.jpg" alt="Beyond the Horizon" />
-                </div>
-                <div class="story 5">
-                  <img src="images/The Clockmaker’s Curse.jpg" alt="The Clockmaker’s Curse" />
-                  </div>
-        <!-- <a href="#" class="more">View All &gt;&gt;</a> -->
-        <a href="viewAll.html" class="more">View All &gt;&gt;</a>
-        <!-- <a href="viewAll.html">View All</a> -->
-        
-      </div>
-    </section>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
     </div>
-<!-- I change ethpryant     -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+
+            // Navigation arrows
+            //   navigation: {
+            //     nextEl: '.swiper-button-next',
+            //     prevEl: '.swiper-button-prev',
+            //   },
 
 
+        });
+    </script>
+    <br><br>
 
+    <h1>We think you'll enjoy!</h1><br><br>
+    <div class="stories">
+        <button class="arrow left hidden" id="prev1">&#10094;</button>
+        <div class="story">
+            <img data-id="9" src="frontPageImages/Error 404.jpg" alt="Whispers in the Wind" onclick="viewStory(this)">
+            <p>Science Fiction</p>
+        </div>
+        <div class="story">
+            <img data-id="10" src="frontPageImages/endless love.jpg" alt="The Forgotten Realm"
+                onclick="viewStory(this)">
+            <p>Romance</p>
+        </div>
+        <div class="story">
+            <img data-id="11" src="frontPageImages/Professor's Dark Desire.jpg" alt="A Love Beyond Time"
+                onclick="viewStory(this)">
+            <p>Dark Academia</p>
+        </div>
+        <div class="story">
+            <img data-id="12" src="frontPageImages/Ink Stained Sorrows Blue Lock Poems.jpg" alt="Echoes of the Past"
+                onclick="viewStory(this)">
+            <p>Sports</p>
+        </div>
+        <div class="story">
+            <img data-id="13" src="frontPageImages/Treacherous.jpg" alt="Shadows and Secrets" onclick="viewStory(this)">
+            <p>Suspense</p>
+        </div>
+        <div class="story">
+            <img data-id="14" src="frontPageImages/Four's Game.jpg" alt="The Last Sunrise" onclick="viewStory(this)">
+            <p>Adventure</p>
+        </div>
+        <div class="story">
+            <img data-id="15" src="frontPageImages/Main(Enemy of the mafia guy).jpg" alt="Journey to Eternity"
+                onclick="viewStory(this)">
+            <p>Crime</p>
+        </div>
+        <div class="story">
+            <img data-id="16" src="frontPageImages/Wolf Moon.jpg" alt="The Silent Witness" onclick="viewStory(this)">
+            <p>Fantasy</p>
+        </div>
+        <!-- <button id="next1" class="arrow right">&#10095;</button> -->
+    </div>
 
+    <br><br>
+    <h1>Recommended for you</h1><br><br>
+    <div class="stories">
+        <button class="arrow left hidden" id="prev2">&#10094;</button>
+        <div class="story">
+            <img data-id="17" src="frontPageImages/cold husband (Kim Taehyungff).jpg" alt="Whispers in the Wind"
+                onclick="viewStory(this)">
+            <p>Fan Fiction</p>
+        </div>
+        <div class="story">
+            <img data-id="18" src="frontPageImages/cupid's match.jpg" alt="The Forgotten Realm"
+                onclick="viewStory(this)">
+            <p>Fantasy</p>
+        </div>
+        <div class="story">
+            <img data-id="19" src="frontPageImages/See Me.jpg" alt="A Love Beyond Time" onclick="viewStory(this)">
+            <p>Romance</p>
+        </div>
+        <div class="story">
+            <img data-id="20" src="frontPageImages/The kellar.jpg" alt="Echoes of the Past" onclick="viewStory(this)">
+            <p>Horror</p>
+        </div>
+        <div class="story">
+            <img data-id="21" src="frontPageImages/Underground.jpg" alt="Shadows and Secrets" onclick="viewStory(this)">
+            <p>Crime</p>
+        </div>
+        <div class="story">
+            <img data-id="22" src="frontPageImages/Villainess Series 1.jpg" alt="The Last Sunrise"
+                onclick="viewStory(this)">
+            <p>Fantasy</p>
+        </div>
+        <div class="story">
+            <img data-id="23" src="frontPageImages/𝐈𝐧𝐧𝐨𝐜𝐞𝐧𝐭 𝐓𝐞𝐦𝐩𝐭𝐚𝐭𝐢𝐨𝐧𝐬.jpg"
+                alt="Journey to Eternity" onclick="viewStory(this)">
+            <p> Drama</p>
+        </div>
+        <div class="story">
+            <img data-id="24" src="frontPageImages/Main(Enemy of the mafia guy).jpg" alt="The Silent Witness"
+                onclick="viewStory(this)">
+            <p>Romance</p>
+        </div>
+        <!-- <button id="next2" class="arrow right">&#10095;</button> -->
+    </div>
 
-    <section class="section">
-      <h2>What People Are Saying</h2>
-      <div class="feedback">
-        <div class="feedback-card">Athrv Patel :<br>"Loved the platform! It's amazing to see so many creative stories." </div>
-        <div class="feedback-card">Neha Sharma :<br>"Very easy to use, and the feedback from readers is encouraging."</div>
-        <div class="feedback-card">Rohan Verma :<br>"This is the best place to share short stories. Highly recommend it."</div>
-        <div class="feedback-card">Karthik Reddy :<br>"The platform is simple yet effective for sharing ideas."</div>
-        <div class="feedback-card">Rajiv Joshi :<br>"The use interface is smooth, and the community is supportive."</div>
-      </div>
-    </section>
+    <br><br>
+    <h1>Your next read</h1><br><br>
+    <div class="stories">
+        <button class="arrow left hidden" id="prev3">&#10094;</button>
+        <div class="story">
+            <img data-id="25" src="frontPageImages/Mr Rude and Me.jpg" alt="Whispers in the Wind"
+                onclick="viewStory(this)">
+            <p>Comedy</p>
+        </div>
+        <div class="story">
+            <img data-id="26" src="frontPageImages/Hired To Love, 2.jpg" alt="The Forgotten Realm"
+                onclick="viewStory(this)">
+            <p>Romance</p>
+        </div>
+        <div class="story">
+            <img data-id="27" src="frontPageImages/She Belongs To The King.jpg" alt="A Love Beyond Time"
+                onclick="viewStory(this)">
+            <p>Drama</p>
+        </div>
+        <div class="story">
+            <img data-id="28" src="frontPageImages/My Brothers Best Friend.jpg" alt="Echoes of the Past"
+                onclick="viewStory(this)">
+            <p>Young Adult</p>
+        </div>
+        <div class="story">
+            <img data-id="29" src="frontPageImages/Property Of Vittore Martinelli.jpg" alt="Shadows and Secrets"
+                onclick="viewStory(this)">
+            <p>Crime</p>
+        </div>
+        <div class="story">
+            <img data-id="30" src="frontPageImages/The Psychic Next Door.jpg" alt="The Last Sunrise"
+                onclick="viewStory(this)">
+            <p>Paranormal</p>
+        </div>
+        <div class="story">
+            <img data-id="31" src="frontPageImages/Deep Desires Miss Mafia.jpg" alt="Journey to Eternity"
+                onclick="viewStory(this)">
+            <p>Romance</p>
+        </div>
+        <div class="story">
+            <img data-id="32" src="frontPageImages/His Possession.jpg" alt="The Silent Witness"
+                onclick="viewStory(this)">
+            <p>Drama</p>
+        </div>
+        <!-- <button id="next3" class="arrow right">&#10095;</button> -->
+    </div>
 
-  <footer>
-    <ul>
-      <li><a href="#about">About Us</a></li>
-      <li><a href="#contact">Contact Us</a></li>
-      <li><a href="#privacy">Privacy Policy</a></li>
-      <li><a href="#social">Social Media Links</a></li>
-    </ul>
-  </footer>
-  <!-- Modal -->
-<div id="storyModal" class="modal">
-  <div class="modal-content">
-      <span class="close">&times;</span>
-      <p id="storyText"></p>
-  </div>
-</div>
-<script src="script.js"></script>
+    <br><br>
+    <h1>Try something new</h1><br><br>
+    <div class="stories">
+        <button class="arrow left hidden" id="prev4">&#10094;</button>
+        <div class="story">
+            <img data-id="33" src="frontPageImages/Crazy Bastard (Vigliante Deku).jpg" alt="Whispers in the Wind"
+                onclick="viewStory(this)">
+            <p>Action</p>
+        </div>
+        <div class="story">
+            <img data-id="34" src="frontPageImages/The Class Prince.jpg" alt="The Forgotten Realm"
+                onclick="viewStory(this)">
+            <p>Young Adult</p>
+        </div>
+        <div class="story">
+            <img data-id="35" src="frontPageImages/The Vampire Next Door.jpg" alt="A Love Beyond Time"
+                onclick="viewStory(this)">
+            <p>Paranormal</p>
+        </div>
+        <div class="story">
+            <img data-id="36" src="frontPageImages/Stop A Short Story.jpg" alt="Echoes of the Past"
+                onclick="viewStory(this)">
+            <p>Short Story</p>
+        </div>
+        <div class="story">
+            <img data-id="37" src="frontPageImages/my roommates.jpg" alt="Shadows and Secrets"
+                onclick="viewStory(this)">
+            <p>Romance</p>
+        </div>
+        <div class="story">
+            <img data-id="38" src="frontPageImages/Dead if You Do.jpg" alt="The Last Sunrise" onclick="viewStory(this)">
+            <p>Thriller</p>
+        </div>
+        <div class="story">
+            <img data-id="39" src="frontPageImages/Emerald Chains.jpg" alt="Journey to Eternity"
+                onclick="viewStory(this)">
+            <p>Fantasy</p>
+        </div>
+        <div class="story">
+            <img data-id="40" src="frontPageImages/Bound by Blood.jpg" alt="The Silent Witness"
+                onclick="viewStory(this)">
+            <p>Romance</p>
+        </div>
+        <!-- <button id="next4" class="arrow right">&#10095;</button> -->
+    </div>
+
+    <br><br>
+    <div id="footer"></div>
+
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+    <script src="footer.js"></script>
+    <script src="script.js"></script>
+
 </body>
+
 </html>

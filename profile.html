@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: black;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding-top: 80px;
+        }
+
+        .profile-container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        h2 {
+            font-size: 26px;
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        button {
+            background: linear-gradient(to right, #6BCBFF, #FF77A9);
+            color: white;
+            border: none;
+            padding: 14px;
+            width: 100%;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #5AB6E6, #FF6095);
+            transform: scale(1.05);
+        }
+
+        .profile-display {
+            display: none;
+            text-align: center;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ddd;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <div class="profile-container">
+            <div id="profile-form">
+                <h2>Profile Information</h2>
+                <form id="userForm">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="bio">Short Bio:</label>
+                    <textarea id="bio" name="bio" rows="4" placeholder="Write something about yourself..."></textarea>
+                    
+                    <label for="profile-pic">Profile Picture:</label>
+                    <input type="file" id="profile-pic" accept="image/*">
+                    
+                    <button type="submit">Save Profile</button>
+                </form>
+            </div>
+            <div id="profile-display" class="profile-display">
+                <h2>Profile Saved!</h2>
+                <img id="display-pic" class="profile-pic" src="https://via.placeholder.com/100" alt="Profile Picture">
+                <p><strong>Name:</strong> <span id="display-name"></span></p>
+                <p><strong>Email:</strong> <span id="display-email"></span></p>
+                <p><strong>Bio:</strong> <span id="display-bio"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("userForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let bio = document.getElementById("bio").value;
+            let profilePic = document.getElementById("profile-pic").files[0];
+
+            if (profilePic) {
+                let reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById("display-pic").src = e.target.result;
+                }
+                reader.readAsDataURL(profilePic);
+            }
+
+            document.getElementById("display-name").textContent = name;
+            document.getElementById("display-email").textContent = email;
+            document.getElementById("display-bio").textContent = bio;
+
+            document.getElementById("profile-form").style.display = "none";
+            document.getElementById("profile-display").style.display = "block";
+        });
+    </script>
+</body>
+</html>

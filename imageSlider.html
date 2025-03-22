@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+           margin : 0;
+           padding : 0; 
+        }
+        body{
+            background-color: #4e60d4;
+        }
+        .slider-box{
+            width : 90%;
+            height: 90vh;
+            margin: 30px auto;
+            position: relative;
+        }
+        #slider{
+            width: 100%;
+            display: inline-flex;
+        }
+        #slider img{
+            width: 100%;
+        }
+        .indicator{
+          position: absolute;
+          left: 50%;
+          bottom: 20px;
+          transform: translateX(-50%); 
+        }
+        .indicator span{
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: rgba(255,255,0.5);
+            cursor: pointer;  
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-box">
+<div id="slider">
+    <img src="images/A Love Beyond Time.jpg">
+    <img src="images/Beneath the Starlit Sky.jpg">
+    <img src="images/Echoes of the Past.jpg">
+    <img src="images/The Last of the Dragons-Set 1.jpg">
+</div>
+<div class="indicator">
+    <span id="btnl1"></span> 
+    <span id="btnl2"></span> 
+    <span id="btnl3"></span> 
+    <span id="btnl4"></span> 
+</div>
+    </div>
+
+    <script>
+        var slide = document.getElementById("slider");
+        var btnl1 = document.getElementById("btn1");
+        var btnl2 = document.getElementById("btn2");
+        var btnl3 = document.getElementById("btn3");
+        var btnl4 = document.getElementById("btn4");
+
+        btn1.onclick = function(){
+            slide.style.transform="translateX(0px)";
+        }
+
+        btn2.onclick = function(){
+            slide.style.transform="translateX(-100%)";
+        }
+
+        btn3.onclick = function(){
+            slide.style.transform="translateX(-200%)";
+        }
+
+        btn4.onclick = function(){
+            slide.style.transform="translateX(-300%)";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar Styling */
+/* .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e2a47; 
+  color: white;
+  padding: 25px 30px;
+  border-bottom: 2px solid #ddd;
+} */
+
+/* Fixed Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1e2a47; /* Dark Blue */
+  color: white;
+  padding: 30px 40px;
+  border-bottom: 2px solid #ddd;
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+
+/* Logo Styling */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  /* color: black; */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 12px;
+  display: block;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff6600;
+}
+
+/* Multi-Column Dropdown */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  padding: 15px;
+  width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
+}
+
+.dropdown h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.dropdown ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  list-style: none;
+}
+
+.dropdown ul li a {
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown ul li a:hover {
+  text-decoration: underline;
+  color: #ff6600;
+}
+
+/* Show dropdown when active */
+.show {
+  display: block !important;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .navbar {
+      flex-direction: column;
+      align-items: center;
+  }
+  .nav-links {
+      flex-direction: column;
+      text-align: center;
+  }
+  .dropdown {
+      width: 100%;
+  }
+  .dropdown ul {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+  /* Search Box */
+  .search-box {
+    text-align: center;
+    margin: 50px 0;
+    margin-bottom: 100px;
+  }
+
+  .search-box input {
+    width: 60%;
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border 0.3s;
+  }
+
+  .search-box input:focus {
+    border: 1px solid #4caf50;
+  }
+/* the navbar styles end here **************************************************************************/
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo" width="120"> 
+            <span class="site-name">storyWorld</span>
+        </div>
+    
+        <ul class="nav-links">
+            <li>
+                <a id="browseBtn" href="#">Browse ▼</a>
+                <div class="dropdown" id="dropdownMenu">
+                    <h3>BROWSE</h3>
+                    <ul>
+                        <li><a href="#">Romance</a></li>
+                        <li><a href="#">Fantasy</a></li>
+                        <li><a href="#">Historical Fiction</a></li>
+                        <li><a href="#">Science Fiction</a></li>
+                        <li><a href="#">Horror</a></li>
+                        <li><a href="#">Mystery</a></li>
+                        <li><a href="#">Adventure</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="startWriting.html">startWriting</a></li>
+            <li><a href="loginForm.html">Login</a></li>
+            <li><a href="signupForm.html">Sign Up</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+    <br><br><br>
+    
+    
+</body>
+</html>

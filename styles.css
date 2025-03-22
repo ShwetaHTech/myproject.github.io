@@ -1,0 +1,388 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e2a47; /* Dark Blue */
+  color: white;
+  padding: 25px 30px;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Navbar ke neeche content hide hone se bachane ke liye */
+body {
+  padding-top: 80px; /* Navbar ki height ke barabar space dena */
+}
+
+/* Logo Styling */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  /* color: black; */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 12px;
+  display: block;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff6600;
+}
+
+/* Multi-Column Dropdown */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  padding: 15px;
+  width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
+}
+
+.dropdown h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.dropdown ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  list-style: none;
+}
+
+.dropdown ul li a {
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown ul li a:hover {
+  text-decoration: underline;
+  color: #ff6600;
+}
+
+/* Show dropdown when active */
+.show {
+  display: block !important;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .navbar {
+      flex-direction: column;
+      align-items: center;
+  }
+  .nav-links {
+      flex-direction: column;
+      text-align: center;
+  }
+  .dropdown {
+      width: 100%;
+  }
+  .dropdown ul {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* the navbar styles end here **************************************************************************/
+
+
+  /* Search Box */
+  .search-box {
+    text-align: center;
+    margin: 50px 0;
+    margin-bottom: 100px;
+  }
+
+  .search-box input {
+    width: 60%;
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border 0.3s;
+  }
+
+  .search-box input:focus {
+    border: 1px solid #4caf50;
+  }
+
+/* end of the search styling  */
+
+@keyframes fadeInOut {
+  0% { opacity: 1; transform: translateY(0); }
+  40% { opacity: 1; }
+  50% { opacity: 0; transform: translateY(-10px); }
+  60% { opacity: 0; }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.intro-text {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.intro-text h1,
+.intro-text p {
+  font-size: 24px;
+  font-weight: bold;
+  animation: fadeInOut 5s infinite;
+} 
+
+/* I can start the styling of images here  */
+.stories {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  
+  /* I can start the change from here */
+  .story {
+    width: 220px;
+    height: 340px; /* Height badha di gayi */
+    background-color: #ffebcd;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column; /* Images or text vertically arrange krnyasathi */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  /* I can change here untill */
+
+  .story img{
+    width: 100%;
+    height: 350px; /* Image height (match screenshot) */
+    object-fit: cover; /* Maintain image aspect ratio */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  }
+  
+  .story:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Story caption ko alag se style dene ke liye */
+.story-caption {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-top: 10px; /* Image aur caption ke beech space */
+}
+
+.stories p {
+  margin-top: 15px; /* Image aur caption ke beech space */
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: capitalize;
+  text-align: center; /* Caption ko center align karna */
+}
+
+/* for arrow styling */
+.hidden {
+        display: none; /* 9th aur 10th images ko initially hide karna */
+      }
+      .arrow {
+          background:white;
+          color: #333;
+          border: none;
+          font-size: 30px;
+          padding: 15px 20px;
+          cursor: pointer;
+      }
+      .arrow.hidden {
+          display: none; /* Initially Previous button hidden hoga */
+      }
+  /* here is end of the story styling  */
+
+  h1{
+    text-align: center;
+    color: #333;
+  }
+  h2 {
+
+    text-align:left;
+    color: #333;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 20px;
+  }
+  
+  footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 15px 0;
+  }
+  
+  footer ul li a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  footer ul li a:hover {
+    color: #ffcc00;
+  }
+
+  /* .stories p {
+    margin-top: 10px; Space below image
+    font-size: 18px; Match text size
+    font-weight: bold;
+    text-transform: capitalize; Capitalize text
+} */
+
+
+
+/* This is for the json desingning  */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: white;
+}
+
+.story-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+}
+
+.story-image img {
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.story-details {
+  flex: 1;
+}
+
+.story-meta {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  font-size: 20px;
+  color: #555;
+}
+
+/* .start-reading {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  background: black;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+} */
+.start-reading {
+  display: block; /* Ensures it behaves like a block element */
+  margin: 15px auto 0; /* Auto margin se horizontally center */
+  text-align: center; /* Text center align (optional) */
+  border: none;
+  background: black;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+
+.start-reading:hover {
+  background: #333;
+}
+
+.tab-space {
+  padding-left: 70px; /* Adjust as needed */
+}
+
+/* .p{
+  width: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  gap: 20px;
+  background: rgb(152, 217, 238);
+  padding: 20px;
+  border-radius: 10px;
+} */
+.summary {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  
+  /* place-items: center; Both vertical & horizontal centering */
+  text-align: center;
+  gap: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  grid-area: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  /* for the story title I can start styling from here */
+  h2{
+    font-size: 40px;
+  }
+}
+.summary-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+
+/* end of the json designing */

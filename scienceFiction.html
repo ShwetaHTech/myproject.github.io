@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Science Fiction Stories</title>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="styles.css">
+
+  <div id="navbar-container"></div>
+  <script>
+    fetch("navbar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("navbar-container").innerHTML = data;
+
+        let script = document.createElement("script");
+        script.src = "navbar.js";
+        document.body.appendChild(script);
+      })
+      .catch(error => console.error("Error loading navbar:", error));
+  </script>
+</head>
+
+<body>
+  <h1 style="font-size: 50px;">Science Fiction Stories</h1><br>
+  <div class="intro-text">
+    <h1>"Journey into the Future of Imagination"</h1>
+  </div><br>
+
+  <h2><pre>                                     sort by hot</pre></h2><br><br>
+  <div class="stories">
+      <div class="story 1">
+          <img src="ScienceImages/A Different Virus Hearfire.jpg" alt="Whispers in the Wind" data-id="65"  onclick="viewStory(this)">
+          <p>Thriller</p>
+      </div>
+      <div class="story 2">
+          <img src="ScienceImages/Aerthysia.jpg" alt="The Forgotten Realm" data-id="66" onclick="viewStory(this)">
+          <p>Adventure</p>
+      </div>
+      <div class="story 3">
+          <img src="ScienceImages/Aliens My Alien, Daeus.jpg" alt="A Love Beyond Time" data-id="67" onclick="viewStory(this)">
+          <p>Aliens</p>
+      </div>
+      <div class="story 4">
+          <img src="ScienceImages/Apex.jpg" alt="Echoes of the Past" data-id="68" onclick="viewStory(this)">
+          <p>Survival</p>
+      </div>
+      <div class="story 5">
+          <img src="ScienceImages/The Virus Within Secrets Unraveled (Book 5).jpg" alt="Shadows and Secrets" data-id="69" onclick="viewStory(this)">
+          <p>Mystery</p>
+      </div>
+      <div class="story 6">
+          <img src="ScienceImages/Between The Crystals.jpg" alt="The Last Sunrise" data-id="70" onclick="viewStory(this)">
+          <p>Fantasy</p>
+      </div>
+      <div class="story 7">
+          <img src="ScienceImages/Build A Scientific And Technological Civilization Part.jpg" alt="Journey to Eternity" data-id="71" onclick="viewStory(this)">
+          <p>Innovation</p>
+      </div>
+      <div class="story 8">
+          <img src="ScienceImages/Cured [ManxMan].jpg" alt="The Silent Witness" data-id="72" onclick="viewStory(this)">
+          <p>Healing</p>
+      </div>
+  </div><br><br>
+  <h2><pre>                                     Most Liked</pre></h2><br><br>
+  <div class="stories">
+      <div class="story 1">
+          <img src="ScienceImages/Destiny  World's Apart.jpg" alt="Whispers in the Wind" data-id="73"  onclick="viewStory(this)">
+          <p>Destiny</p>
+      </div>
+      <div class="story 2">
+          <img src="ScienceImages/Empyrean Iris.jpg" alt="The Forgotten Realm" data-id="74" onclick="viewStory(this)">
+          <p>Magic</p>
+      </div>
+      <div class="story 3">
+          <img src="ScienceImages/Finding Humanity.jpg" alt="A Love Beyond Time" data-id="75" onclick="viewStory(this)">
+          <p>Hope</p>
+      </div>
+      <div class="story 4">
+          <img src="ScienceImages/Gate old world blues.jpg" alt="Echoes of the Past" data-id="76" onclick="viewStory(this)">
+          <p>Warfare</p>
+      </div>
+      <div class="story 5">
+          <img src="ScienceImages/Heathen.jpg" alt="Shadows and Secrets" data-id="77" onclick="viewStory(this)">
+          <p>Rebellion</p>
+      </div>
+      <div class="story 6">
+          <img src="ScienceImages/Hidden Abnormality.jpg" alt="The Last Sunrise" data-id="78" onclick="viewStory(this)">
+          <p>Mutation</p>
+      </div>
+      <div class="story 7">
+          <img src="ScienceImages/In Search of Home.jpg" alt="Journey to Eternity" data-id="79" onclick="viewStory(this)">
+          <p>Home</p>
+      </div>
+      <div class="story 8">
+          <img src="ScienceImages/In the grip of the Alien.jpg" alt="The Silent Witness" data-id="80" onclick="viewStory(this)">
+          <p>Abduction</p>
+      </div>
+  </div><br><br>
+  <h2><pre>                                     People Want</pre></h2><br><br>
+  <div class="stories">
+      <div class="story 1">
+          <img src="ScienceImages/In the last days, beauty, system....jpg" alt="Whispers in the Wind" data-id="81"  onclick="viewStory(this)">
+          <p>Apocalypse</p>
+      </div>
+      <div class="story 2">
+          <img src="ScienceImages/Lavender & Ice.jpg" alt="The Forgotten Realm" data-id="82" onclick="viewStory(this)">
+          <p>Romance</p>
+      </div>
+      <div class="story 3">
+          <img src="ScienceImages/Lost Empire.jpg" alt="A Love Beyond Time" data-id="83" onclick="viewStory(this)">
+          <p>Empire</p>
+      </div>
+      <div class="story 4">
+          <img src="ScienceImages/Manager's Duties.jpg" alt="Echoes of the Past" data-id="84" onclick="viewStory(this)">
+          <p>Leadership</p>
+      </div>
+      <div class="story 5">
+          <img src="ScienceImages/Plutonian.jpg" alt="Shadows and Secrets" data-id="85" onclick="viewStory(this)">
+          <p>Space</p>
+      </div>
+      <div class="story 6">
+          <img src="ScienceImages/When The Heart Sings.jpg" alt="The Last Sunrise" data-id="86" onclick="viewStory(this)">
+          <p>Music</p>
+      </div>
+      <div class="story 7">
+          <img src="ScienceImages/The General ✓.jpg" alt="Journey to Eternity" data-id="87" onclick="viewStory(this)">
+          <p>Warrior</p>
+      </div>
+      <div class="story 8">
+          <img src="ScienceImages/The Mirror Of Eternity.jpg" alt="The Silent Witness" data-id="88" onclick="viewStory(this)">
+          <p>Reflection</p>
+      </div>
+  </div><br><br>
+</body>
+<div id="footer"></div>
+<script src="footer.js"></script>
+</html>

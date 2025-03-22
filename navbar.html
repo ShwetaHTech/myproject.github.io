@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1e2a47; /* Dark Blue */
+  color: white;
+  padding: 30px 40px;
+  border-bottom: 2px solid #ddd;
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+.logo {
+    display: flex;         /* Enables flexbox */
+    align-items: center;   /* Aligns items vertically */
+    gap: 10px;            /* Adds space between the logo and text */
+}
+
+.rounded-logo {
+    border-radius: 50%;   /* Makes the image circular */
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 12px;
+  display: block;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff6600;
+}
+
+/* Multi-Column Dropdown */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  padding: 15px;
+  width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
+}
+
+.dropdown h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.dropdown ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  list-style: none;
+}
+
+.dropdown ul li a {
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown ul li a:hover {
+  text-decoration: underline;
+  color: #ff6600;
+}
+
+/* Show dropdown when active */
+.show {
+  display: block !important;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .navbar {
+      flex-direction: column;
+      align-items: center;
+  }
+  .nav-links {
+      flex-direction: column;
+      text-align: center;
+  }
+  .dropdown {
+      width: 100%;
+  }
+  .dropdown ul {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+  /* Search Box */
+  .search-box button {
+    padding: 14px 20px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    background-color: #4caf50; /* Green background */
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-box button:hover {
+    background-color: #45a049;
+}
+
+
+
+  .search-box {
+    text-align: center;
+    margin: 50px 0;
+    margin-bottom: 100px;
+  }
+
+  .search-box input {
+    width: 60%;
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border 0.3s;
+  }
+
+  .search-box input:focus {
+    border: 1px solid #4caf50;
+  }
+/* the navbar styles end here **************************************************************************/
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo" width="50"  class="rounded-logo"> 
+            <span class="site-name">storyWorld</span>
+        </div>
+    
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+            <li>
+                <a id="browseBtn" href="#">Browse ▼</a>
+                <div class="dropdown" id="dropdownMenu">
+                    <h3>BROWSE</h3>
+                    <ul>
+                        <li><a href="Romance.html">Romance</a></li>
+                        <li><a href="Fantasy.html">Fantasy</a></li>
+                        <li><a href="HistoricalFiction.html">Historical Fiction</a></li>
+                        <li><a href="scienceFiction.html">Science Fiction</a></li>
+                        <li><a href="Horror.html">Horror</a></li>
+                        <li><a href="Mystery.html">Mystery</a></li>
+                        <li><a href="Adventure.html">Adventure</a></li>
+                    </ul>
+                </div>
+            </li>
+            <!-- <li><a href="startReading.html">startWriting</a></li> -->
+            <li><a href="startWriting.html">Start Writing</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <!-- <li><a href="submitStory.html">startWriting</a></li> -->
+            <li><a href="loginForm.html">Login</a></li>
+            <li><a href="signupForm.html">Sign Up</a></li>
+            <li><a href="aboutUs.html">About Us</a></li>
+      <li><a href="contactUs.html">Contact Us</a></li>
+      <li><a href="Feedback.html">Feedback</a></li>
+            
+        </ul>
+    </nav>
+    <br><br><br><br>
+    <!-- Search Box -->
+    <div class="search-box">
+        <input type="text" placeholder="Search stories...">
+        <button>Search</button>
+    </div>
+    
+</body>
+</html>

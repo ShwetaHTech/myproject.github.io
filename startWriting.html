@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Start Writing Your Story</title>
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 100vh;
+      background: url('backgroundd (2).jpg') no-repeat center center/cover;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    form {
+      width: 100%;
+      max-width: 900px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    
+    label {
+      font-size: 22px;
+      font-weight: bold;
+      display: block;
+      color: white;
+      margin-bottom: 5px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 22px;
+      background: transparent;
+      color: white;
+      border: none;
+      border-bottom: 2px solid white;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    input:focus, textarea:focus {
+      border-bottom: 2px solid #ff77a9;
+    }
+
+    textarea {
+      height: 200px;
+      resize: vertical;
+    }
+
+
+    .info {
+      color: white;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .save-draft, .submit-btn {
+      padding: 14px 30px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+      font-weight: bold;
+    }
+
+    .save-draft {
+      background: linear-gradient(to right, #6749c1, #ab2fab);
+      color: #333;
+    }
+
+    .save-draft:hover {
+      background: linear-gradient(to right, #a82aa8  #6f58b4);
+      transform: scale(1.05);
+    }
+
+    .submit-btn {
+      background:   #e6007e;
+      color: white;
+    }
+
+    .submit-btn:hover {
+      background:linear-gradient(to right, #e6007e, rgb(75, 75, 230));
+      transform: scale(1.05);
+    }
+
+    .warning {
+      color:   red;
+      font-size: 18px;
+      margin-top: 10px;
+      display: none;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Start Writing Your Story</h1>
+  <form id="storyForm">
+    <div class="form-group">
+      <label for="storyTitle">Story Title</label>
+      <input type="text" id="storyTitle" placeholder="Enter story title" />
+      <div class="info">Keep it short and catchy!</div>
+    </div>
+    <div class="form-group">
+      <label for="storyContent">Story Content</label>
+      <textarea id="storyContent" placeholder="Write your story here..."></textarea>
+      <div class="info">Write your story, feel free to express yourself!</div>
+    </div>
+    <div class="button-group">
+      <button type="button" class="save-draft" onclick="saveDraft()">Save Draft</button>
+      <button type="button" class="submit-btn" onclick="submitStory()">Submit Story</button>
+    </div>
+  </form>
+  <div id="warningMessage" class="warning">Warning: Your story is saved as a draft.</div>
+
+  <script>
+    let isDraftSaved = false;
+    setInterval(saveDraft, 10000);
+
+    function saveDraft() {
+      const title = document.getElementById('storyTitle').value.trim();
+      const content = document.getElementById('storyContent').value.trim();
+      if (title || content) {
+        localStorage.setItem('storyTitle', title);
+        localStorage.setItem('storyContent', content);
+        isDraftSaved = true;
+        document.getElementById('warningMessage').style.display = 'block';
+      }
+    }
+
+    function submitStory() {
+      const title = document.getElementById('storyTitle').value.trim();
+      const content = document.getElementById('storyContent').value.trim();
+      if (title && content) {
+        localStorage.removeItem('storyTitle');
+        localStorage.removeItem('storyContent');
+        isDraftSaved = false;
+        document.getElementById('warningMessage').style.display = 'none';
+        window.location.href = "submitStory.html";
+      } else {
+        alert('Please fill in both title and content to submit the story.');
+      }
+    }
+
+    window.onbeforeunload = function () {
+      if (isDraftSaved) {
+        return 'You have unsaved changes. Are you sure you want to leave?';
+      }
+    };
+
+    window.onload = function () {
+      const savedTitle = localStorage.getItem('storyTitle');
+      const savedContent = localStorage.getItem('storyContent');
+      if (savedTitle || savedContent) {
+        document.getElementById('storyTitle').value = savedTitle || '';
+        document.getElementById('storyContent').value = savedContent || '';
+        isDraftSaved = true;
+        document.getElementById('warningMessage').style.display = 'block';
+      }
+    };
+  </script>
+</body>
+</html>

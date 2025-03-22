@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="stories">
+    <button id="prev" class="arrow left hidden">&#10094;</button>
+  
+    <div class="story"><img data-id="1" src="images/Whispers in the Wind.jpg" alt="Whispers in the Wind"><p>Drama</p></div>
+    <div class="story"><img data-id="2" src="images/The Forgotten Realm.jpg" alt="The Forgotten Realm"><p>Fantasy</p></div>
+    <div class="story"><img data-id="3" src="images/A Love Beyond Time.jpg" alt="A Love Beyond Time"><p>Romance</p></div>
+    <div class="story"><img data-id="4" src="images/Echoes of the Past.jpg" alt="Echoes of the Past"><p>Mystery</p></div>
+    <div class="story"><img data-id="5" src="images/Shadows and Secrets.jpg" alt="Shadows and Secrets"><p>Suspense</p></div>
+    <div class="story"><img data-id="6" src="images/The Last Sunrise.jpg" alt="The Last Sunrise"><p>Dystopian</p></div>
+    <div class="story"><img data-id="7" src="images/Journey to Eternity.jpg" alt="Journey to Eternity"><p>Fantasy</p></div>
+    <div class="story"><img data-id="8" src="images/The Silent Witness.jpg" alt="The Silent Witness"><p>Crime</p></div>
+    <div class="story hidden"><img data-id="9" src="images/The Lost Kingdom.jpg" alt="The Lost Kingdom"><p>Adventure</p></div>
+    <div class="story hidden"><img data-id="10" src="images/Beyond the Horizon.jpg" alt="Beyond the Horizon"><p>Sci-Fi</p></div>
+  
+    <button id="next" class="arrow right">&#10095;</button>
+  </div>
+  
+  <style>
+    .stories {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        max-width: 800px;
+        margin: auto;
+    }
+    .story {
+        width: 100px;
+        text-align: center;
+    }
+    .story img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .hidden {
+        display: none; /* 9th aur 10th images ko initially hide karna */
+    }
+    .arrow {
+        background: #333;
+        color: white;
+        border: none;
+        font-size: 24px;
+        padding: 10px 15px;
+        cursor: pointer;
+    }
+    .arrow.hidden {
+        display: none; /* Initially Previous button hidden hoga */
+    }
+  </style>
+  
+  <script>
+    let currentIndex = 8; // Pehli 8 images visible rahengi
+    const stories = document.querySelectorAll(".story");
+    const prevButton = document.getElementById("prev");
+    const nextButton = document.getElementById("next");
+  
+    document.getElementById("next").addEventListener("click", function () {
+        if (currentIndex < stories.length) {
+            stories[currentIndex].classList.remove("hidden");
+            currentIndex++;
+        }
+        if (currentIndex > 8) {
+            prevButton.classList.remove("hidden"); // 9th image dikhne ke baad Previous button show hoga
+        }
+        if (currentIndex === stories.length) {
+            nextButton.classList.add("hidden"); // 10th image ke baad Next button hide ho jayega
+        }
+    });
+  
+    document.getElementById("prev").addEventListener("click", function () {
+        if (currentIndex > 8) {
+            currentIndex--;
+            stories[currentIndex].classList.add("hidden");
+        }
+        if (currentIndex === 8) {
+            prevButton.classList.add("hidden"); // Agar wapas 8th image par aaye, toh Previous button hide hoga
+        }
+        nextButton.classList.remove("hidden"); // Jab piche jayenge toh Next button dikhana hai
+    });
+  </script>
+  
+</body>
+</html>
